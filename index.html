@@ -29,7 +29,7 @@
     >
       Download PDF
     </button>
-    <div class="chart-container" style="width: 100%;"></div>
+    <div class="chart-container" style="width: 100%"></div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-org-chart@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
@@ -52,7 +52,17 @@
           .svgWidth(window.innerWidth)
           .svgHeight(window.innerHeight)
           .nodeContent(function (d, i, arr, state) {
-            console.log(d.data.imageUrl);
+            let empImage = '';
+            let empManages = '';
+            if (d.data.imageUrl) {
+              empImage = `<img crossorigin="anonymous" src=" ${
+                      d.data.imageUrl
+                    }" style="margin-top:-30px;margin-left:${d.width / 2 - 30}px;border-radius:100px;width:60px;height:60px;" />`;
+            }
+            if (d.data.imageUrl) {
+              empManages = `<div > Manages:  ${d.data._directSubordinates} 👤</div>
+                     <div > Oversees: ${d.data._totalSubordinates} 👤</div>`;
+            }
             return `
                 <div style="padding-top:30px;background-color:none;margin-left:1px;height:${
                   d.height
@@ -61,9 +71,7 @@
                     d.height - 32
                   }px;padding-top:0px;background-color:white;border:1px solid lightgray;">
 
-                    <img crossorigin="anonymous" src=" ${
-                      d.data.imageUrl
-                    }" style="margin-top:-30px;margin-left:${d.width / 2 - 30}px;border-radius:100px;width:60px;height:60px;" />
+                    ${empImage}
 
                    <div style="margin-right:10px;margin-top:15px;float:right">${
                      d.data.id
@@ -82,8 +90,7 @@
                        } </div>
                    </div>
                    <div style="display:flex;justify-content:space-between;padding-left:15px;padding-right:15px;">
-                     <div > Manages:  ${d.data._directSubordinates} 👤</div>
-                     <div > Oversees: ${d.data._totalSubordinates} 👤</div>
+                     ${empManages}
                    </div>
                   </div>
           </div>

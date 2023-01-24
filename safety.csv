@@ -1,3 +1,7 @@
 name,imageUrl,area,profileUrl,office,tags,isLoggedUser,positionName,id,parentId,size
 Josephine Amaro,https://cdn.jsdelivr.net/gh/pb-repository/org_chart@master/Images/general-manager.jpg  ,Corporate,,,,false,General Manager,pb_gm,,
 Hadhassah Vidal,https://cdn.jsdelivr.net/gh/pb-repository/org_chart@master/Images/company-nurse.jpg,Corporate,,,,false,Company Nurse / Health & Safety Officer,pb_cn,pb_gm,
+EMPLOYER REPRESENTATIVES,,,,,,,,pb_err,pb_cn,
+EMPLOYEE REPRESENTATIVES,,,,,,,,pb_eer,pb_cn,
+EVACUATION TEAM,,,,,,,,pb_ent,pb_cn,
+FIRE BRIGADE,,,,,,,,pb_feb,pb_cn,
