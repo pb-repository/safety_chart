@@ -35,10 +35,11 @@
     <script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
     <script>
+      var randomNumber = Math.floor(Math.random() * 10000);
       var chart;
       d3.csv(
         // 'https://raw.githubusercontent.com/bumbeishvili/sample-data/main/org.csv'
-        'https://raw.githubusercontent.com/pb-repository/safety_chart/master/safety.csv'
+        `https://raw.githubusercontent.com/pb-repository/safety_chart/master/safety.csv?v=${randomNumber}}`
       ).then((dataFlattened) => {
         chart = new d3.OrgChart()
           .container('.chart-container')
