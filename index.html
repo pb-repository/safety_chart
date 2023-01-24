@@ -52,13 +52,11 @@
           .svgWidth(window.innerWidth)
           .svgHeight(window.innerHeight)
           .nodeContent(function (d, i, arr, state) {
-            let divHeight = d.height - 72;
             let bgColor = '#3AB6E3';
             let empImage = '';
             let imgLine = '';
             let empManages = '';
             if (d.data.imageUrl) {
-              divHeight = d.height - 32;
               bgColor = 'white';
               empImage = `<img crossorigin="anonymous" src=" ${
                 d.data.imageUrl
@@ -77,7 +75,7 @@
                   d.height
                 }px;border-radius:2px;overflow:visible">
                   <div style="height:${
-                    divHeight
+                    d.height - 32
                   }px;padding-top:0px;background-color:${bgColor};border:1px solid lightgray;">
 
                     ${empImage}
