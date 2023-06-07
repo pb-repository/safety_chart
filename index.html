@@ -4,7 +4,7 @@
     <style>
       .svg-chart-container {
         /* background-color: #7f7f7f !important; */
-        background-image: url('https://cdn.jsdelivr.net/gh/pb-repository/safety_chart@master/Images/background.jpg');
+        background-image: url('https://cdn.jsdelivr.net/gh/pb-repository/safety_chart@latest/Images/background.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -12,6 +12,20 @@
     </style>
   </head>
   <body>
+    <div 
+      style="
+        position: fixed;
+        top: 20;
+        left: 20;
+        z-index: 2;
+        color: #3AB6E3;
+        font-family: sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+      "
+    >
+      PB Safety Committee Chart
+    </div>
     <button
       style="
         position: fixed;
@@ -29,7 +43,7 @@
     >
       Download PDF
     </button>
-    <div class="chart-container" style="width: 100%"></div>
+    <div class="chart-container" style="width: 100%;"></div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-org-chart@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
@@ -61,7 +75,7 @@
               bgColor = 'white';
               empImage = `<img crossorigin="anonymous" src=" ${
                 d.data.imageUrl
-              }" style="margin-top:-30px;margin-left:${
+              }?v=${randomNumber}" style="margin-top:-30px;margin-left:${
                 d.width / 2 - 30
               }px;border-radius:100px;width:60px;height:60px;" />`;
               imgLine = `<div style="margin-top:-30px;background-color:#3AB6E3;height:10px;width:${
@@ -122,7 +136,7 @@
                 285,
                 200
               );
-              pdf.save('pb-safety-chart.pdf');
+              pdf.save('pb-safety-committee-chart.pdf');
             };
           },
         });
